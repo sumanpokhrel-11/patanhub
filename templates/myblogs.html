@@ -1,0 +1,28 @@
+{%load static%}
+{%static 'images' as baseURL%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%include 'head.html'%}
+</head>
+<body>
+    {%include 'nabbar.html'%}
+    {%for blog in blogs%}
+    <h1>{{blog.title}}</h1>
+    <figure class="figure">
+        <img src="{{blog.img.url}}" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption text-end">{{blog.title}}</figcaption>
+      </figure>
+
+    <pre>
+        {{blog.desc}}
+    </pre>
+    <p><small>{{blog.date}}</small></p>
+    {%endfor%}
+
+    {%include 'footer.html'%}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{%load static%}
+{%static 'images' as baseURL%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%include 'head.html'%}
+</head>
+<body>
+    {%include 'nabbar.html'%}
+
+    
+{% block content %}
+<h2>Create a New Blog Post</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Post</button>
+    </form>
+    {% endblock %}
+    
+    {% block extrahead %}
+    {{ form.media }}
+    {% endblock %}
+
+
+{%include 'footer.html'%}
+</body>
+</html>

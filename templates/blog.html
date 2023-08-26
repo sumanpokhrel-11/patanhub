@@ -1,0 +1,43 @@
+{%load static%}
+{%static 'images' as baseURL%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    {%include 'head.html'%}
+</head>
+<body>
+    {%include 'nabbar.html'%}
+
+    <h1> Blog Section </h1>
+      {% comment %} <div class="row row-cols-1 row-cols-md-3 g-4">
+        {%for blog in blogs%}
+  <div class="col">
+    <div class="card h-100">
+      {% comment %} <a href="myblogs/{{blog.id}}"> {% endcomment %}
+        {% comment %} <a href="myblogs">
+          <img src="{{blog.img.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <p class="card-text">
+          {{blog.theme}}
+        </p>
+      </div></a> 
+      <div class="card-footer">
+        <small class="text-muted">{{blog.date}}</small>
+        
+        <small class = "text-mutated" style="float:right;">{{blog.author}}
+      </div>
+    </div>
+  </div>
+  {%endfor%} {% endcomment %}
+{% comment %} </div> {% endcomment %} 
+<h1> To create a new blog, Go To</h1>
+<a href="blog_user"> Create Blog</a>
+
+
+    {%include 'footer.html'%}
+</body>
+</html>
